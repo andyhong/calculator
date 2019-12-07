@@ -12,11 +12,24 @@ body {
     border-radius: 20px;
 }
 
-.display{
-    text-align: right;
-    font-size: 24pt;
+.display {
     padding: 0.5em;
     padding-top: 0.6em;
+}
+
+.history {
+    text-align: right;
+    font-size: 12pt;
+    color: grey;
+    padding-right: 1em;
+    padding-top: 0.6em;
+}
+
+.result {
+    text-align: right;
+    font-size: 24pt;
+    padding-right: 0.5em;
+    padding-top: 0.4em;
 }
 
 .buttons {
@@ -47,4 +60,4 @@ body {
 
 #equals {
     border-bottom-right-radius: 25px;
-}
+} 

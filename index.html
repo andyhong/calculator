@@ -5,32 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>calculator</title>
 </head>
 <body>
     <div class="calculator">
-        <div class="display">0</div>
+        <div class="display">
+            <div class="history"></div>
+            <div class="result">0</div>
+        </div>
         <div class="buttons">
             <button type="button" id="clear" class="button">AC</button>
             <button type="button" class="button">+/-</button>
-            <button type="button" class="button">%</button>
-            <button type="button" class="button">divide</button>
+            <button type="button" class="button operator">%</button>
+            <button type="button" name="divide" class="button operator">&divide;</button>
             <button type="button" class="button number">7</button>
             <button type="button" class="button number">8</button>
             <button type="button" class="button number">9</button>
-            <button type="button" class="button">multiply</button>
+            <button type="button" name="multiply" class="button operator">&times;</button>
             <button type="button" class="button number">4</button>
             <button type="button" class="button number">5</button>
             <button type="button" class="button number">6</button>
-            <button type="button" class="button">minus</button>
+            <button type="button" name="minus" class="button operator">&minus;</button>
             <button type="button" class="button number">1</button>
             <button type="button" class="button number">2</button>
             <button type="button" class="button number">3</button>
-            <button type="button" class="button">add</button>
+            <button type="button" name = "add" class="button operator">&plus;</button>
             <button type="button" id="del" class="button">del</button>
             <button type="button" id="zero" class="button number">0</button>
             <button type="button" id="dot" class="button dot">.</button>
-            <button type="button" id="equals" class="button">=</button>
+            <button type="button" id="equals" class="button">&equals;</button>
         </div>
     </div>
     <script src="script.js"></script>
