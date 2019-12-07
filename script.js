@@ -1,3 +1,5 @@
+// TODO: plus minus, stop all input after equals, %
+
 const result = document.querySelector('.result');
 const history = document.querySelector('.history');
 const numbers = document.querySelectorAll('.number');
@@ -5,9 +7,8 @@ const del = document.querySelector('#del');
 const dot = document.querySelector('#dot');
 const clear = document.querySelector("#clear");
 const equals = document.querySelector("#equals");
+const plusminus = document.querySelector('#plusminus');
 const operators = document.querySelectorAll(".operator");
-let displayValue = 0;
-let runningTotal = 0;
 
 let calculation = {
     memory: null,
@@ -15,7 +16,7 @@ let calculation = {
     previousOperator: null,
     nextOperand: null,
     nextOperator: null,
-    waitingForNextOperand: false,
+    waitingForNextOperand: true,
 }
 
 const compute = function () {
@@ -53,7 +54,28 @@ const clearDisplay = function () {
         nextOperator: null,
     }
     history.textContent = '';
+    enableButtons();
 }
+
+const disableButtons = function () {
+    numbers.forEach(number => {
+        number.disabled = true;
+    });
+    operators.forEach(operator => {
+        operator.disabled = true;
+    });
+    del.disabled = true;
+};
+
+const enableButtons = function () {
+    numbers.forEach(number => {
+        number.disabled = false;
+    });
+    operators.forEach(operator => {
+        operator.disabled = false;
+    });
+    del.disabled = false;
+};
 
 const checkOperators = function () {
     for (i = 0; i < operators.length; i++) {
@@ -134,4 +156,11 @@ equals.addEventListener('click', () => {
     history.textContent += ` ${calculation.nextOperand}`;
     compute();
     result.textContent = calculation.memory;
-})
+    disableButtons();
+});
+
+plusminus.addEventListener('click', () => {
+    if (calculation.waitingForNextOperand == true) {
+        result.textContent = result.textContent * -1;
+    }
+});

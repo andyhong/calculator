@@ -54,6 +54,13 @@ body {
     opacity: 50%;
 }
 
+#clear {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
 #del {
     border-bottom-left-radius: 25px;
 }
