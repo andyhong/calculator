@@ -1,5 +1,3 @@
-// TODO: plus minus, stop all input after equals, %
-
 const result = document.querySelector('.result');
 const history = document.querySelector('.history');
 const numbers = document.querySelectorAll('.number');
@@ -138,7 +136,6 @@ dot.addEventListener('click', () => {
     }
 });
 
-// BROKEN because it is null then becomes not null and clears both if statements...
 operators.forEach(operator => {
     operator.addEventListener('click', () => {
         if (calculation.waitingForNextOperand == true && calculation.previousOperand != null) {
@@ -159,11 +156,13 @@ operators.forEach(operator => {
 });
 
 equals.addEventListener('click', () => {
-    calculation.nextOperand = result.textContent;
-    history.textContent += ` ${calculation.nextOperand}`;
-    compute();
-    result.textContent = calculation.memory;
-    disableButtons();
+    if (calculation.waitingForNextOperand !== false && calculation.previousOperator !== null) {
+        calculation.nextOperand = result.textContent;
+        history.textContent += ` ${calculation.nextOperand}`;
+        compute();
+        result.textContent = calculation.memory;
+        disableButtons();
+    }
 });
 
 plusminus.addEventListener('click', () => {

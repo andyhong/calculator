@@ -22,7 +22,7 @@ body {
 .history {
     text-align: right;
     font-size: 12pt;
-    color: grey;
+    color: gray;
     padding-right: 1em;
     padding-top: 0.6em;
 }
@@ -31,7 +31,8 @@ body {
     text-align: right;
     font-size: 24pt;
     padding-right: 0.5em;
-    padding-top: 0.4em;
+    padding-top: 0.2em;
+    color: white;
 }
 
 .buttons {
@@ -53,7 +54,7 @@ body {
 
 .button:hover {
     background-color: lightgray;
-    opacity: 50%;
+    opacity: 100%;
 }
 
 #clear {
@@ -61,12 +62,31 @@ body {
     grid-row-end: 2;
     grid-column-start: 1;
     grid-column-end: 3;
+    font-weight: bold;
+}
+
+.operator {
+    font-weight: bold;
+}
+
+#plusminus {
+    font-weight: bold;
+}
+
+#dot {
+    font-weight: bold;
 }
 
 #del {
     border-bottom-left-radius: 20px;
+    font-weight: bold;
 }
 
 #equals {
     border-bottom-right-radius: 20px;
-} 
+    font-weight: bold;
+}
+
+.active {
+    background-color: pink;
+}
