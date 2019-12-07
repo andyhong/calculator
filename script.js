@@ -54,6 +54,7 @@ const clearDisplay = function () {
     }
     history.textContent = '';
     enableButtons();
+    removeOperators();
 }
 
 const disableButtons = function () {
