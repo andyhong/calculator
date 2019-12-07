@@ -52,6 +52,7 @@ const clearDisplay = function () {
         previousOperator: null,
         nextOperand: null,
         nextOperator: null,
+        waitingForNextOperand: true,
     }
     history.textContent = '';
     enableButtons();
@@ -65,6 +66,9 @@ const disableButtons = function () {
         operator.disabled = true;
     });
     del.disabled = true;
+    plusminus.disabled = true;
+    equals.disabled = true;
+    dot.disabled = true;
 };
 
 const enableButtons = function () {
@@ -75,6 +79,9 @@ const enableButtons = function () {
         operator.disabled = false;
     });
     del.disabled = false;
+    plusminus.disabled = false;
+    equals.disabled = false;
+    dot.disabled = false;
 };
 
 const checkOperators = function () {
