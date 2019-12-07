@@ -1,5 +1,6 @@
 body {
     font-family: sans-serif;
+    background-color: pink;
 }
 
 .calculator {
@@ -10,6 +11,7 @@ body {
     top: 25%;
     left: 25%;
     border-radius: 20px;
+    transform: scale(2)
 }
 
 .display {
@@ -62,9 +64,9 @@ body {
 }
 
 #del {
-    border-bottom-left-radius: 25px;
+    border-bottom-left-radius: 20px;
 }
 
 #equals {
-    border-bottom-right-radius: 25px;
+    border-bottom-right-radius: 20px;
 } 
