@@ -107,10 +107,7 @@ numbers.forEach(number => {
         if (result.textContent == 0 && !result.textContent.includes('.')) {
             result.textContent = '';
         }
-        if (checkOperators()) {
-            result.textContent = '';
-            removeOperators();
-        }
+
         if (calculation.waitingForNextOperand == false) {
             result.textContent = '';
             calculation.waitingForNextOperand = true;
@@ -139,6 +136,8 @@ dot.addEventListener('click', () => {
 operators.forEach(operator => {
     operator.addEventListener('click', () => {
         if (calculation.waitingForNextOperand == true && calculation.previousOperand != null) {
+            removeOperators();
+            operator.classList.add('active');
             calculation.nextOperand = result.textContent;
             calculation.nextOperator = operator.textContent;
             history.textContent += ` ${calculation.nextOperand} ${calculation.nextOperator}`;
@@ -147,6 +146,8 @@ operators.forEach(operator => {
         }
 
         if (calculation.previousOperand == null) {
+            removeOperators();
+            operator.classList.add('active');
             calculation.previousOperand = result.textContent;
             calculation.previousOperator = operator.textContent;
             calculation.waitingForNextOperand = false;
@@ -157,6 +158,7 @@ operators.forEach(operator => {
 
 equals.addEventListener('click', () => {
     if (calculation.waitingForNextOperand !== false && calculation.previousOperator !== null) {
+        removeOperators();
         calculation.nextOperand = result.textContent;
         history.textContent += ` ${calculation.nextOperand}`;
         compute();
